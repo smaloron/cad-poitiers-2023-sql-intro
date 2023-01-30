@@ -1,5 +1,5 @@
 CREATE TABLE invoices (
-    id INT UNSIGNED,
+    id INT UNSIGNED AUTO_INCREMENT,
     amount INT NOT NULL,
     client VARCHAR(30) NOT NULL,
     created_at DATE NOT NULL,
@@ -21,7 +21,7 @@ VALUES
 ;
 
 CREATE TABLE cities (
-    id INT UNSIGNED,
+    id INT UNSIGNED AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL ,
     country VARCHAR(50) NOT NULL ,
     continent VARCHAR(30) NOT NULL ,
@@ -108,12 +108,12 @@ VALUES
 
 
 CREATE TABLE books (
-    id INT UNSIGNED,
+    id INT UNSIGNED AUTO_INCREMENT,
     title VARCHAR(50) NOT NULL,
     author VARCHAR(50) NOT NULL,
     published_at DATE NOT NULL,
     publisher VARCHAR(50) NOT NULL,
-    genre VARCHAR(20) NOT NULL,
+    genre VARCHAR(50) NOT NULL,
     price DECIMAL(5,2) NOT NULL,
     language VARCHAR(2) NOT NULL DEFAULT 'fr',
     PRIMARY KEY (id)
