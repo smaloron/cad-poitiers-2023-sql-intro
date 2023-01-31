@@ -27,3 +27,8 @@ SELECT auteur FROM livres_simples
 GROUP BY auteur 
 HAVING COUNT(DISTINCT editeur) > 1;
 
+SELECT editeur, 
+GROUP_CONCAT(DISTINCT auteur ORDER BY auteur_nom  SEPARATOR ' : ' ) 
+FROM livres_simples
+GROUP BY editeur
+
