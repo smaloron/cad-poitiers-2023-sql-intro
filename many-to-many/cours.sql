@@ -26,3 +26,11 @@ VALUES
 (2, 1), (2, 5), (2, 6),
 (3, 3), (3, 4), (4, 6)
 ;
+
+SELECT p.id, prenom, nom, GROUP_CONCAT(titre)
+FROM personnes as p
+INNER JOIN inscriptions_cours as ic
+ON p.id = ic.id_personne
+INNER JOIN cours
+ON cours.id = ic.id_cours
+GROUP BY p.id;
