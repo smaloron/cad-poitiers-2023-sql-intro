@@ -15,8 +15,10 @@ UPDATE personnes SET id_adresse = 3 WHERE
 id = 3;
 
 /*
-UPDATE personnes SET id_adresse = NULL WHERE
+UPDATE personnes SET id_adresse = 100 WHERE
 id = 7;
+
+DELETE FROM adresses;
 */
 
 UPDATE personnes SET id_adresse = 2
@@ -28,3 +30,8 @@ ADD CONSTRAINT
 personnes_to_adresses
 FOREIGN KEY (id_adresse)
 REFERENCES adresses(id);
+
+-- Sélection multi table
+SELECT nom, prenom, rue, code_postal, ville
+FROM personnes, adresses 
+WHERE id_adresse = adresses.id;
