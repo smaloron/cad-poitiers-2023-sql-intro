@@ -35,3 +35,14 @@ REFERENCES adresses(id);
 SELECT nom, prenom, rue, code_postal, ville
 FROM personnes, adresses 
 WHERE id_adresse = adresses.id;
+
+-- Autre syntaxe
+SELECT nom, prenom, rue, code_postal, ville
+FROM personnes INNER JOIN adresses
+ON id_adresse = adresses.id;
+
+-- Jointure pour obtenir aussi les personnes 
+-- sans adresse
+SELECT nom, prenom, rue, code_postal, ville
+FROM personnes LEFT JOIN adresses
+ON id_adresse = adresses.id;
