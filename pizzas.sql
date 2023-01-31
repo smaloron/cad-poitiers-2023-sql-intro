@@ -15,7 +15,7 @@ Faire une requête qui affiche toutes les pizzas dans toutes les tailles possibl
 
 Tables
 pizzas
-ingredients_pizzas
+ingredients_pizza
 recettes_pizza
 tailles_pizza
 */
