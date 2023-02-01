@@ -68,6 +68,15 @@ INSERT INTO pizzas (nom) VALUES
 INSERT INTO recettes_pizza (id_pizza, id_ingredient) VALUES 
 (1, 1), (1, 2), (2, 4), (2,1);
 
+-- création des INDEX
+ALTER TABLE recettes_pizza 
+ADD INDEX index_id_ingredient (id_ingredient);
+
+ALTER TABLE recettes_pizza 
+ADD INDEX index_id_pizza (id_pizza);
+
+-- consulter les index
+SHOW INDEXES FROM recettes_pizza;
 
 -- Le menu de la pizzeria
 CREATE OR REPLACE VIEW vue_pizzas AS
