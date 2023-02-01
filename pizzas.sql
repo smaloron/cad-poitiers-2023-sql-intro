@@ -67,3 +67,19 @@ INSERT INTO pizzas (nom) VALUES
 
 INSERT INTO recettes_pizza (id_pizza, id_ingredient) VALUES 
 (1, 1), (1, 2), (2, 4), (2,1);
+
+
+-- Le menu de la pizzeria
+CREATE OR REPLACE VIEW vue_pizzas AS
+SELECT 
+p.nom,
+tp.nom as taille,
+tp.prix + (SUM(ip.prix) * tp.coeficient) as prix
+
+FROM tailles_pizza as tp, pizzas as p
+INNER JOIN recettes_pizza as rp
+ON p.id = rp.id_pizza
+INNER JOIN ingredients_pizza as ip
+ON ip.id = rp.id_ingredient
+GROUP BY tp.coeficient,tp.prix,tp.nom, p.id
+;
