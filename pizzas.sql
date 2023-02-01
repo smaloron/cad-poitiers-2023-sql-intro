@@ -53,3 +53,17 @@ CREATE TABLE IF NOT EXISTS tailles_pizza (
     coeficient DECIMAL(2,1),
     PRIMARY KEY(id)
 );
+
+INSERT INTO tailles_pizza (nom,prix,coeficient)
+VALUES
+('Petite', 5, 1), ('Moyenne', 8, 1.5),
+('Grande', 12, 2);
+
+INSERT INTO ingredients_pizza (nom,prix)
+VALUES ('Poivron', 2), ('Oignons', 1), ('lardons', 2), ('Saumon', 4);
+
+INSERT INTO pizzas (nom) VALUES
+('La super pizza'), ('La spécialité du chef');
+
+INSERT INTO recettes_pizza (id_pizza, id_ingredient) VALUES 
+(1, 1), (1, 2), (2, 4), (2,1);
