@@ -1,6 +1,6 @@
--- DROP DATABASE IF EXISTS cours;
--- CREATE DATABASE cours DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
--- USE cours;
+DROP DATABASE IF EXISTS cours;
+CREATE DATABASE cours DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE cours;
 
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -96,8 +96,8 @@ DROP TABLE IF EXISTS vendeurs_villes;
 CREATE TABLE IF NOT EXISTS vendeurs_villes (
   id_vendeur int(10) unsigned NOT NULL auto_increment,
   cp varchar(5) NOT NULL,
-  Date_debut date NOT NULL default '0000-00-00',
-  date_fin date NOT NULL default '0000-00-00',
+  Date_debut date NOT NULL,
+  date_fin date NOT NULL,
   PRIMARY KEY  (id_vendeur,cp,Date_debut),
   KEY cp (cp)
 ) ENGINE=InnoDB;
